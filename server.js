@@ -3,21 +3,15 @@ const http = require('http');
 const path = require('path');
 const express = require('express');
 const compress = require('compression');
-// const bodyParser = require('body-parser');
-// const expressValidator = require('express-validator');
-// const passport = require('passport');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 
 // Required api routes
-const users = require('./api/s');
+const imageSearch = require('./api/imageSearch');
 
 // Required config files
 // This file will not be tracked by git as it will contain secret api keys
 // const config = require('./config/api');
-
-// Pass passport to passport config file
-require('./config/passport')(passport)
 
 // Set mongoose promise library
 mongoose.Promise = global.Promise;
@@ -32,22 +26,10 @@ const app  = express();
 
 // Add express middleware
 app.use(morgan('dev'));
-// app.use(bodyParser.json());
-// app.use(expressValidator());
 app.use(compress());
-// app.use(require('express-session')({
-//   // For more secure session secret, place it in config api file and pass it here. ( secret: config.sessionSecret )
-//   secret: 'keyboard cat',
-//   resave: true,
-//   saveUninitialized: true
-// }));
-
-// Initialize passport
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Connect api routes to app
-app.use('/api/users', users);
+app.use('/api/imageSearch', imageSearch);
 
 // If serving a html site use the following, else comment it out
 // app.use(express.static(path.resolve('../dist')));
