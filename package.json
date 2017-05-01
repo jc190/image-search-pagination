@@ -1,0 +1,36 @@
+{
+  "name": "image-search-pagination",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "description": "Search for images on Imgur",
+  "main": "server.js",
+  "scripts": {
+    "test": "tape tests/**/*.js | faucet",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jc190/image-search-pagination.git"
+  },
+  "author": "James Calhoun (https://jamesc.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jc190/image-search-pagination.git/issues"
+  },
+  "homepage": "https://github.com/jc190/image-search-pagination.git#readme",
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+    "mongoose": "^4.8.6",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "faucet": "^0.0.1",
+    "nodemon": "^1.11.0",
+    "tape": "^4.6.3"
+  }
+}
