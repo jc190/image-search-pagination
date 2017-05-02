@@ -16,9 +16,13 @@ const imageSearch = require('./api/imageSearch');
 // Set mongoose promise library
 mongoose.Promise = global.Promise;
 
+// ------------------------------------------
+// TODO: Setup database & database connection
+// ------------------------------------------
+
 // Connect to MongoDB through mongoose
 // mongoose.connect('mongodb://' + config.mdbuser + ':' + config.mdbpw + '@localhost:27017/[db name]')
-// mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/imageSearch');
 // console.log(mongoose.connection)
 
 // Create express app
